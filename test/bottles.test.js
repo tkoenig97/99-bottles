@@ -341,7 +341,7 @@ Go to the store and buy some more, 99 bottles of beer on the wall.
 });
 
 describe('BottleVerse', () => {
-  test('the first verse', () => {
+  test('verse general rule upper bound', () => {
     const expected =
       '99 bottles of beer on the wall, ' +
       '99 bottles of beer.\n' +
@@ -350,13 +350,31 @@ describe('BottleVerse', () => {
     expect(BottleVerse.lyrics(99)).toBe(expected);
   });
 
-  test('another verse', () => {
+  test('verse general rule lower bound', () => {
     const expected =
       '3 bottles of beer on the wall, ' +
       '3 bottles of beer.\n' +
       'Take one down and pass it around, ' +
       '2 bottles of beer on the wall.\n';
     expect(BottleVerse.lyrics(3)).toBe(expected);
+  });
+
+  test('verse 7', () => {
+    const expected = 
+      '7 bottles of beer on the wall, ' +
+      '7 bottles of beer.\n' +
+      'Take one down and pass it around, ' +
+      '1 six-pack of beer on the wall.\n';
+    expect(BottleVerse.lyrics(7)).toBe(expected);
+  });
+
+  test('verse 6', () => {
+    const expected = 
+      '1 six-pack of beer on the wall, ' +
+      '1 six-pack of beer.\n' +
+      'Take one down and pass it around, ' +
+      '5 bottles of beer on the wall.\n';
+    expect(BottleVerse.lyrics(6)).toBe(expected);
   });
 
   test('verse 2', () => {
